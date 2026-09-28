@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_sales_stock_check" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.sales.stock.check</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//app[@name='sale_management']" position="inside">
+                <block title="Sales Stock Check">
+                    <setting
+                        id="sale_stock_check_enabled"
+                        string="Check Stock Before Confirmation"
+                        help="Prevent sales orders from being confirmed when the ordered quantity exceeds the available free quantity."
+                    >
+                        <field name="sale_stock_check_enabled"/>
+                    </setting>
+                </block>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
